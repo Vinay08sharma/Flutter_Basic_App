@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: {
+      '/': (context) => MyApp(),
+      '/second': (context) => SecondRoute()
+    },
+  ));
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black,
         body: Container(
@@ -29,7 +36,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               const Text(
-                'Flutter Developer',
+                'SDET',
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.white,
@@ -80,15 +87,64 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10.0),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Click Me'),
-                  )),
+                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: Color.fromARGB(255, 228, 230, 236),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/second');
+                    },
+                    icon: Icon(Icons.arrow_forward),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      // appBar: AppBar(
+      //   title: Text('Welcome!!!'),
+      //   backgroundColor: Colors.white,
+      // ),
+      body: Container(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Text(
+            'Clicked on the Arrow button',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2.0,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 30.0),
+            child: CircleAvatar(
+              radius: 30,
+              backgroundColor: Color.fromARGB(255, 228, 230, 236),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                icon: Icon(Icons.arrow_back),
+              ),
+            ),
+          ),
+        ],
+      )),
     );
   }
 }
