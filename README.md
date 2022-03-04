@@ -1,22 +1,46 @@
-# intro
+# Flutter : Integration Testing
 
-A new Flutter project.
+## Topics Covered
+- Introduction
+- Pre-requisite
+- How to Create Project
+- Application Walk through
+- Folder Structure Wal through
+- Running Application - android, web 
 
-## Getting Started
+### Introduction
+ A single platform for web, ios, android app.
 
-This project is a starting point for a Flutter application.
+### Pre-requisite
+- | Flutter SDK Download | [https://docs.flutter.dev/get-started/install/macos]
+- | Flutter Extension | [VS Code platform ]
+- | Setup Test | ````flutter doctor ````
 
-## To Run the project on chrome browser
-```bash
-  flutter run -d chrome 
-```
+### How to Create Project
+- Navigate to desired directory
+- Run command ````flutter create <project name> ````
+- Run command ````flutter pub get ````
 
-## To Run the project on android emulator
-```bash
-  flutter run -d <emulator name> 
-```
+ 
+### Folder Structure Walkthrough
+ - lib folder
+ - android, ios, web etc folder
+ - pubspec.yaml file and pubspec-lock.ymal file
+ - dependency structure
 
-## To Run the project on ios simulator
-```bash
-  flutter run -d <simulator name> 
-```
+
+### Running Application
+ - In Emulator
+ - In Web 
+ -    To Run in web,, enable via - ````flutter config --enable-web ````
+      and Reload the IDE.
+
+### Further Scope
+ - We can integrate with Jenkins by Running Test on FireBase Test Lab
+ - CodeMagic also support e2e CI/CD integration 
+
+Stay Tunned for those configuration level details.
+
+
+
+
